@@ -11,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <style>
 /*
   CUSTOMIZE THESE ITEMS:
@@ -1476,6 +1477,42 @@ textarea {
   }
 }
 
+
+/* ---------- POLISHED MOTION UPGRADE ---------- */
+.txb-steps {
+  animation: txb-steps-drift 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+.txb-step {
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.txb-step:hover {
+  transform: translateY(-7px);
+  border-color: #9bd2ad;
+  box-shadow: 0 18px 38px rgba(11,23,42,.11);
+}
+@keyframes txb-steps-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-14px); }
+}
+.txb-service-card, .txb-product, .txb-industry, .txb-mini-card,
+.txb-dashboard-wrap, .txb-about-visual, .txb-contact-card {
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.txb-product:hover, .txb-industry:hover { transform: translateY(-5px); box-shadow: 0 16px 34px rgba(11,23,42,.1); }
+.txb-reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+.txb-reveal.is-visible { opacity: 1; transform: translateY(0); }
+.txb-menu a, .txb-btn, .txb-footer-links a { transition: color .2s ease, background-color .2s ease, transform .2s ease; }
+@media (max-width: 700px) {
+  .txb-steps { animation-duration: 22s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .txb-reveal { opacity: 1; transform: none; }
+}
+/* Map playback dashboard */
+.txb-live-map-shell{height:310px;isolation:isolate;background:#22343a;overflow:hidden}.txb-live-map{position:absolute;inset:0;z-index:0;background:#324746;opacity:.35;transition:opacity 1s ease}.txb-live-map-shell.map-ready .txb-live-map{opacity:1}.txb-live-map .leaflet-tile{filter:saturate(.82) contrast(1.04) brightness(.88)}.txb-live-map .leaflet-control-attribution{font-size:8px}.txb-map-topline{position:absolute;z-index:500;left:12px;right:12px;top:12px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}.txb-map-topline span{border-radius:99px;padding:7px 10px;background:#15272dcc;color:#fff;font-size:9px;letter-spacing:.08em;font-weight:800;box-shadow:0 4px 14px #0003}.txb-map-topline i{color:#8be3a7;font-size:13px;vertical-align:-2px}.txb-map-topline .txb-demo-tag{color:#d4f6dd;background:#0e7d3acc}.txb-map-caption{position:absolute;z-index:500;top:54px;left:12px;display:grid;gap:2px;padding:8px 10px;border-radius:9px;color:#fff;background:#15272dcc;pointer-events:none}.txb-map-caption strong{font-size:10px}.txb-map-caption span{color:#d2ded9;font-size:8px}.txb-map-vehicle-card{left:12px;bottom:12px;width:220px}.txb-live-vehicle-icon{display:grid;place-items:center;width:38px;height:38px;border:3px solid #fff;border-radius:50%;color:#fff;background:#159a49;box-shadow:0 4px 15px #0008;font-size:19px}@media(max-width:700px){.txb-live-map-shell{height:270px}.txb-map-vehicle-card{width:195px}}
 </style>
 
 <style id="txb-brand-overrides">
@@ -1565,6 +1602,42 @@ textarea {
     height: 60px;
   }
 }
+
+/* ---------- POLISHED MOTION UPGRADE ---------- */
+.txb-steps {
+  animation: txb-steps-drift 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+.txb-step {
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.txb-step:hover {
+  transform: translateY(-7px);
+  border-color: #9bd2ad;
+  box-shadow: 0 18px 38px rgba(11,23,42,.11);
+}
+@keyframes txb-steps-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-14px); }
+}
+.txb-service-card, .txb-product, .txb-industry, .txb-mini-card,
+.txb-dashboard-wrap, .txb-about-visual, .txb-contact-card {
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.txb-product:hover, .txb-industry:hover { transform: translateY(-5px); box-shadow: 0 16px 34px rgba(11,23,42,.1); }
+.txb-reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1); }
+.txb-reveal.is-visible { opacity: 1; transform: translateY(0); }
+.txb-menu a, .txb-btn, .txb-footer-links a { transition: color .2s ease, background-color .2s ease, transform .2s ease; }
+@media (max-width: 700px) {
+  .txb-steps { animation-duration: 22s; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .txb-reveal { opacity: 1; transform: none; }
+}
+/* Map playback dashboard */
+.txb-live-map-shell{height:310px;isolation:isolate;background:#22343a;overflow:hidden}.txb-live-map{position:absolute;inset:0;z-index:0;background:#324746;opacity:.35;transition:opacity 1s ease}.txb-live-map-shell.map-ready .txb-live-map{opacity:1}.txb-live-map .leaflet-tile{filter:saturate(.82) contrast(1.04) brightness(.88)}.txb-live-map .leaflet-control-attribution{font-size:8px}.txb-map-topline{position:absolute;z-index:500;left:12px;right:12px;top:12px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}.txb-map-topline span{border-radius:99px;padding:7px 10px;background:#15272dcc;color:#fff;font-size:9px;letter-spacing:.08em;font-weight:800;box-shadow:0 4px 14px #0003}.txb-map-topline i{color:#8be3a7;font-size:13px;vertical-align:-2px}.txb-map-topline .txb-demo-tag{color:#d4f6dd;background:#0e7d3acc}.txb-map-caption{position:absolute;z-index:500;top:54px;left:12px;display:grid;gap:2px;padding:8px 10px;border-radius:9px;color:#fff;background:#15272dcc;pointer-events:none}.txb-map-caption strong{font-size:10px}.txb-map-caption span{color:#d2ded9;font-size:8px}.txb-map-vehicle-card{left:12px;bottom:12px;width:220px}.txb-live-vehicle-icon{display:grid;place-items:center;width:38px;height:38px;border:3px solid #fff;border-radius:50%;color:#fff;background:#159a49;box-shadow:0 4px 15px #0008;font-size:19px}@media(max-width:700px){.txb-live-map-shell{height:270px}.txb-map-vehicle-card{width:195px}}
 </style>
 
 </head>
@@ -1639,45 +1712,19 @@ textarea {
             <div class="txb-dashboard-title">TxB Fleet Monitor</div>
             <div class="txb-online">
               <span class="txb-online-dot"></span>
-              LIVE SYSTEM
+              MAP DEMO
             </div>
           </div>
 
-          <div class="txb-map">
-            <div class="txb-route"></div>
-
-            <div class="txb-pin txb-pin-one">
-              <i class="mdi mdi-car"></i>
+          <div class="txb-map txb-live-map-shell">
+            <div id="txbLiveMap" class="txb-live-map" role="img" aria-label="Satellite map demo showing a vehicle moving along a route"></div>
+            <div class="txb-map-topline"><span><i class="mdi mdi-satellite-variant"></i> SATELLITE VIEW</span><span class="txb-demo-tag">DEMO ROUTE</span></div>
+            <div class="txb-map-caption"><strong>Kampala route preview</strong><span>Illustrative movement • Not connected to live vehicles</span></div>
+            <div class="txb-vehicle-card txb-map-vehicle-card">
+              <div class="txb-vehicle-row"><div class="txb-car-icon"><i class="mdi mdi-car-connected"></i></div><div><strong>TXB VEHICLE 01</strong><small>Demo vehicle • Route playback</small></div></div>
+              <div class="txb-status"><span>Tracking preview</span><b>PLAYING</b></div>
             </div>
-
-            <div class="txb-pin txb-pin-two">
-              <i class="mdi mdi-map-marker"></i>
-            </div>
-
-            <div class="txb-pin txb-pin-three">
-              <i class="mdi mdi-truck-outline"></i>
-            </div>
-
-            <div class="txb-map-label txb-label-one">VEHICLE 01</div>
-            <div class="txb-map-label txb-label-two">DESTINATION</div>
-
-            <div class="txb-vehicle-card">
-              <div class="txb-vehicle-row">
-                <div class="txb-car-icon">
-                  <i class="mdi mdi-car-connected"></i>
-                </div>
-                <div>
-                  <strong>TXB VEHICLE 01</strong>
-                  <small>Moving • Live location</small>
-                </div>
-              </div>
-
-              <div class="txb-status">
-                <span>Status</span>
-                <b>ACTIVE</b>
-              </div>
-            </div>
-          </div>
+          </div></div>
 
         </div>
 
@@ -2342,9 +2389,26 @@ textarea {
 
 </div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
+  /* Satellite map demo: a clearly labeled vehicle animation over Esri imagery. */
+const mapNode=document.getElementById('txbLiveMap');
+if(mapNode&&window.L){
+ const route=[[0.315,32.581],[0.322,32.590],[0.332,32.598],[0.341,32.608],[0.350,32.617],[0.357,32.629]];
+ const map=L.map(mapNode,{scrollWheelZoom:false}).setView(route[2],13);
+ const imagery=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{attribution:'Imagery &copy; Esri and contributors',maxZoom:19}).addTo(map);
+ imagery.once('load',()=>mapNode.parentElement.classList.add('map-ready'));
+ const line=L.polyline(route,{color:'#39df88',weight:5,opacity:.92,dashArray:'9 9'}).addTo(map);
+ L.circleMarker(route[0],{radius:6,color:'#fff',weight:3,fillColor:'#159a49',fillOpacity:1}).addTo(map);
+ L.circleMarker(route[route.length-1],{radius:7,color:'#fff',weight:3,fillColor:'#fc8301',fillOpacity:1}).addTo(map);
+ const icon=L.divIcon({className:'',html:'<span class="txb-live-vehicle-icon"><i class="mdi mdi-car"></i></span>',iconSize:[38,38],iconAnchor:[19,19]});
+ const car=L.marker(route[0],{icon,zIndexOffset:1000}).addTo(map), points=line.getLatLngs();let seg=0,t=0,dir=1,last=0;
+ function drive(now){if(now-last>45){t+=.012*dir;if(t>=1||t<=0){t=Math.max(0,Math.min(1,t));seg+=dir;if(seg>=points.length-1||seg<=0)dir*=-1;seg=Math.max(0,Math.min(points.length-2,seg));}const a=points[seg],b=points[seg+1];car.setLatLng([a.lat+(b.lat-a.lat)*t,a.lng+(b.lng-a.lng)*t]);last=now;}requestAnimationFrame(drive)}
+ map.fitBounds(line.getBounds(),{padding:[35,35]});setTimeout(()=>map.invalidateSize(),300);
+ if(!matchMedia('(prefers-reduced-motion: reduce)').matches)requestAnimationFrame(drive);
+}
   /* Mobile navigation */
   const mobileBtn = document.getElementById("txbMobileBtn");
   const menu = document.getElementById("txbMenu");
@@ -2409,6 +2473,27 @@ document.addEventListener("DOMContentLoaded", function () {
         quoteForm.reset();
       }, 2500);
     });
+  }
+
+
+  /* Smoothly reveal sections as they enter the viewport. */
+  const revealTargets = document.querySelectorAll(
+    '.txb-section-head, .txb-service-card, .txb-about-visual, .txb-about-content, .txb-step, .txb-feature-content, .txb-mini-dashboard, .txb-product, .txb-industry, .txb-faq-item, .txb-contact-card'
+  );
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    revealTargets.forEach(function (element, index) {
+      element.classList.add('txb-reveal');
+      element.style.transitionDelay = (index % 4) * 70 + 'ms';
+    });
+    const revealObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealTargets.forEach(function (element) { revealObserver.observe(element); });
   }
 
   /* Highlight navigation while scrolling */
@@ -2480,3 +2565,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
+
+
